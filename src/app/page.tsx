@@ -4,7 +4,10 @@ export default function Home() {
       {/* ── Nav ── */}
       <nav className="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-[#0A1628]/80 border-b border-white/5">
         <div className="max-w-[1080px] mx-auto px-6 h-14 flex items-center justify-between">
-          <a href="/" className="font-semibold tracking-wide text-[15px]">ATTA</a>
+          <a href="/" className="flex items-center gap-3 group">
+            <span className="font-bold tracking-wide text-[15px]">ATTA</span>
+            <span className="text-[12px] text-white/25 border-l border-white/10 pl-3">阿塔 AI · 青少年创客教育</span>
+          </a>
           <div className="flex items-center gap-8 text-[13px] text-white/40">
             <a href="/teach" className="hover:text-white/70 transition-colors">教师工作台</a>
             <a href="/partner" className="hover:text-white/70 transition-colors">机构合作</a>
@@ -20,18 +23,19 @@ export default function Home() {
           <img
             src="/atta-sphere.jpg"
             alt="ATTA"
-            className="mx-auto mb-12 w-40 h-40 rounded-full object-cover sphere"
+            className="mx-auto mb-8 w-40 h-40 rounded-full object-cover sphere"
           />
-          <h1 className="text-[5rem] md:text-[7rem] font-bold tracking-tighter leading-none mb-4">
+          <h1 className="text-[5rem] md:text-[7rem] font-bold tracking-tighter leading-none mb-3">
             <span className="grad">ATTA</span>
           </h1>
+          <p className="text-lg text-white/35 font-medium mb-1">阿塔 AI</p>
           <p className="text-2xl text-white/70 font-medium mb-3">AI 创客实战营</p>
           <p className="text-[15px] text-white/30 leading-relaxed max-w-sm mx-auto mb-14">
             面向 8–15 岁青少年的开源 AI 教育体系<br />
             三轨九级，从兴趣启蒙到竞赛冲刺
           </p>
           <div className="flex gap-4 justify-center">
-            <a href="#tracks" className="px-8 py-3 rounded-full bg-white text-[#0A1628] text-[14px] font-semibold hover:bg-white/90 transition-colors">
+            <a href="#tracks" className="group px-8 py-3 rounded-full bg-gradient-to-r from-[#0066FF] to-[#00D4FF] text-white text-[14px] font-semibold shadow-[0_0_24px_rgba(0,102,255,0.3)] hover:shadow-[0_0_36px_rgba(0,102,255,0.45)] transition-all">
               查看课程体系
             </a>
             <a href="https://github.com/ryrhappy/atta-ai-curriculum" target="_blank" rel="noopener noreferrer" className="px-8 py-3 rounded-full border border-white/15 text-white/60 text-[14px] font-semibold hover:bg-white/5 transition-colors">
