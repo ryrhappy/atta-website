@@ -78,3 +78,6 @@ body {
 }
 .step-row:hover { background: rgba(255,255,255,.02); }
 .step-row.active { background: rgba(0,212,255,.04); border-color: rgba(0,212,255,.15); }
+
+/* tabular nums for data alignment */
+.tabular-nums { font-variant-numeric: tabular-nums; }
