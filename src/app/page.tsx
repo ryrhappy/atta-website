@@ -17,8 +17,11 @@ export default function Home() {
       <section className="sect pt-40 pb-32 flex items-center justify-center relative overflow-hidden">
         <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-gradient-to-r from-[#0066FF]/10 to-[#FF6B2C]/6 blur-[160px] pointer-events-none" />
         <div className="relative z-10 text-center max-w-2xl mx-auto">
-          {/* ATTA sphere — needs a real image */}
-          <div className="mx-auto mb-12 w-32 h-32 rounded-full bg-gradient-to-br from-[#0066FF] to-[#FF6B2C] sphere" />
+          <img
+            src="/atta-sphere.jpg"
+            alt="ATTA"
+            className="mx-auto mb-12 w-40 h-40 rounded-full object-cover sphere"
+          />
           <h1 className="text-[5rem] md:text-[7rem] font-bold tracking-tighter leading-none mb-4">
             <span className="grad">ATTA</span>
           </h1>
@@ -232,7 +235,11 @@ export default function Home() {
       {/* ── CTA ── */}
       <section className="sect">
         <div className="max-w-lg mx-auto text-center">
-          <div className="w-20 h-20 mx-auto mb-10 rounded-full bg-gradient-to-br from-[#0066FF] to-[#FF6B2C] sphere" />
+          <img
+            src="/atta-sphere.jpg"
+            alt="ATTA"
+            className="w-20 h-20 mx-auto mb-10 rounded-full object-cover sphere"
+          />
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             让每个孩子<br />都能用 <span className="grad">AI</span> 创造
           </h2>
