@@ -4,74 +4,57 @@ import { tracks } from "../lib/courses";
 export default function TeachPage() {
   return (
     <main className="min-h-screen grid-bg pt-20 pb-16 px-6">
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-[960px] mx-auto">
         {/* Header */}
-        <div className="text-center mb-16">
-          <p className="text-sm font-semibold tracking-widest uppercase text-[#00D4FF] mb-3">
-            Teacher Dashboard
-          </p>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            教师工作台
-          </h1>
-          <p className="text-white/40 max-w-lg mx-auto leading-relaxed">
-            选择课程轨道 → 查看教案 → 按步骤授课。每个步骤都有话术、计时和注意事项。
+        <div className="text-center mb-20">
+          <span className="chip mb-4">Teacher Dashboard</span>
+          <h1 className="text-[2.5rem] md:text-[3rem] font-bold mt-4 mb-4">教师工作台</h1>
+          <p className="text-white/30 text-[15px] max-w-md mx-auto leading-relaxed">
+            选择课程轨道，查看教案，按步骤授课
           </p>
         </div>
 
-        {/* Track Selector */}
-        <div className="grid md:grid-cols-3 gap-6 mb-16">
-          {tracks.map((track) => {
-            const borderColor =
-              track.color === "green"
-                ? "border-green-400/20 hover:border-green-400/40"
-                : track.color === "blue"
-                ? "border-blue-400/20 hover:border-blue-400/40"
-                : "border-orange-400/20 hover:border-orange-400/40";
-            const bgColor =
-              track.color === "green"
-                ? "bg-green-400/[0.03]"
-                : track.color === "blue"
-                ? "bg-blue-400/[0.03]"
-                : "bg-orange-400/[0.03]";
-
-            return (
-              <Link
-                key={track.id}
-                href={`/teach/${track.id}`}
-                className={`block rounded-2xl p-6 border ${borderColor} ${bgColor} transition-colors`}
-              >
-                <div className="text-3xl mb-3">{track.icon}</div>
-                <h2 className="text-xl font-bold mb-1">{track.name}</h2>
-                <p className="text-white/30 text-sm mb-4">{track.age}</p>
-                <div className="text-sm text-white/50 space-y-1">
-                  <p>{track.totalLessons} 课 × {track.lessonDuration}</p>
-                  <p className="font-semibold text-white/70">已录入 {track.lessons.length} 课</p>
-                </div>
-              </Link>
-            );
-          })}
+        {/* Track Cards */}
+        <div className="grid md:grid-cols-3 gap-5 mb-20">
+          {tracks.map((track) => (
+            <Link
+              key={track.id}
+              href={`/teach/${track.id}`}
+              className="card p-7 block group"
+            >
+              <span className="chip mb-5 inline-block">
+                {track.subtitle}
+              </span>
+              <h2 className="text-lg font-bold mb-1 group-hover:text-[#00D4FF] transition-colors">
+                {track.name}
+              </h2>
+              <p className="text-white/25 text-[13px] mb-5">{track.age}</p>
+              <p className="text-white/35 text-[13px]">
+                {track.totalLessons} 课 × {track.lessonDuration}
+              </p>
+              <p className="text-white/50 text-[13px] mt-1">
+                已录入 {track.lessons.length} / {track.totalLessons} 课
+              </p>
+            </Link>
+          ))}
         </div>
 
-        {/* Quick Guide */}
-        <div className="bg-white/[0.03] rounded-2xl p-8 border border-white/[0.06]">
-          <h3 className="font-semibold mb-4 text-lg">📖 使用指南</h3>
-          <div className="grid md:grid-cols-4 gap-6 text-sm text-white/50">
-            <div>
-              <p className="text-white/70 font-medium mb-1">1️⃣ 选轨道</p>
-              <p>点击上方卡片选择课程轨道</p>
-            </div>
-            <div>
-              <p className="text-white/70 font-medium mb-1">2️⃣ 选课程</p>
-              <p>浏览课程列表，点击进入教案</p>
-            </div>
-            <div>
-              <p className="text-white/70 font-medium mb-1">3️⃣ 看步骤</p>
-              <p>按时间轴逐步授课，含话术和动作</p>
-            </div>
-            <div>
-              <p className="text-white/70 font-medium mb-1">4️⃣ 查物料</p>
-              <p>课前检查物料清单，课后发学习报告</p>
-            </div>
+        {/* Guide */}
+        <div className="card p-8">
+          <h3 className="font-semibold mb-6 text-[15px] text-white/60">使用指南</h3>
+          <div className="grid md:grid-cols-4 gap-8 text-[13px]">
+            {[
+              { step: "01", label: "选轨道", desc: "点击上方卡片" },
+              { step: "02", label: "选课程", desc: "浏览课程列表" },
+              { step: "03", label: "看步骤", desc: "逐步授课，含话术和动作" },
+              { step: "04", label: "查物料", desc: "课前检查清单" },
+            ].map((item) => (
+              <div key={item.step}>
+                <p className="text-white/10 font-bold text-lg mb-1">{item.step}</p>
+                <p className="text-white/70 font-medium mb-0.5">{item.label}</p>
+                <p className="text-white/25">{item.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
