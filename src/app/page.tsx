@@ -9,7 +9,7 @@ export default function Home() {
         <div className="relative w-full px-6 h-14 flex items-center">
           <a href="/" className="absolute left-6 flex items-center gap-3 group">
             <span className="font-bold tracking-wide text-[15px]">ATTA</span>
-            <span className="text-[12px] text-white/25 border-l border-white/10 pl-3">阿塔 AI · 青少年创客教育</span>
+            <span className="text-[12px] text-white/25 border-l border-white/10 pl-3">阿塔 AI</span>
           </a>
           <div className="absolute right-6 flex items-center gap-8 text-[13px] text-white/40">
             <a href="/teach" className="hover:text-white/70 transition-colors">教师工作台</a>
