@@ -10,7 +10,7 @@ export default function PartnerPage() {
             <span className="chip tech-chip">For Partners</span>
             <h1 className="tech-heading text-[2.5rem] md:text-[3rem] font-bold mt-6 mb-4">机构合作</h1>
             <p className="tech-lead text-[15px] md:text-[16px]">
-              培训机构、学校、少年宫 — 无需自己研发课程，ATTA 提供完整体系
+              培训机构、学校、少年宫 — 无需从零研发 AI 课程，ATTA 提供 10–15 岁主线课与体验课资产
             </p>
           </div>
         </section>
@@ -47,11 +47,11 @@ export default function PartnerPage() {
           <div className="grid md:grid-cols-3 gap-6">
             <div className="tech-panel p-8 text-center">
               <h3 className="tech-title font-bold text-[17px] mb-2">课程授权</h3>
-              <p className="tech-copy text-[14px] mb-5">1 个轨道完整教学资源</p>
+              <p className="tech-copy text-[14px] mb-5">10–15 岁主线课完整教学资源</p>
               <p className="text-2xl font-bold">8,000<span className="text-sm text-white/35 font-normal"> - 15,000 元/年</span></p>
               <ul className="mt-6 space-y-2 text-[14px] tech-copy">
-                <li>完整教案 + PPT + 任务单</li>
-                <li>学生手册 + 评价量表</li>
+                <li>20 课 × 120 分钟主线课程</li>
+                <li>教案 + HTML 课件 + 任务单</li>
                 <li>1 年更新权限</li>
               </ul>
             </div>
@@ -59,24 +59,24 @@ export default function PartnerPage() {
             <div className="tech-panel tech-panel-highlight p-8 text-center">
               <span className="chip text-blue-200 border-blue-300/50 bg-blue-400/15 mb-5 mx-auto">推荐</span>
               <h3 className="tech-title font-bold text-[17px] mb-2">全套合作</h3>
-              <p className="tech-copy text-[14px] mb-5">课程 + 师资 + 答疑</p>
+              <p className="tech-copy text-[14px] mb-5">课程 + 师资 + 试讲资产</p>
               <p className="text-2xl font-bold">30,000<span className="text-sm text-white/35 font-normal"> - 50,000 元/年</span></p>
               <ul className="mt-6 space-y-2 text-[14px] tech-copy">
-                <li>3 个轨道完整授权</li>
+                <li>主线课完整授权</li>
                 <li>师资培训（2 天）</li>
-                <li>教学答疑支持</li>
-                <li>竞赛指导方案</li>
+                <li>体验课与招生物料</li>
+                <li>作品展示与家长反馈模板</li>
               </ul>
             </div>
 
             <div className="tech-panel p-8 text-center">
               <h3 className="tech-title font-bold text-[17px] mb-2">单次工作坊</h3>
-              <p className="tech-copy text-[14px] mb-5">半天体验课，试水合作</p>
+              <p className="tech-copy text-[14px] mb-5">AI 古诗导演体验课</p>
               <p className="text-2xl font-bold">3,000<span className="text-sm text-white/35 font-normal"> - 5,000 元/场</span></p>
               <ul className="mt-6 space-y-2 text-[14px] tech-copy">
                 <li>1 节体验课完整方案</li>
-                <li>物料清单 + 模板</li>
-                <li>适合招生引流</li>
+                <li>互动课件 + 提示词清单</li>
+                <li>适合机构试讲和招生转化</li>
               </ul>
             </div>
           </div>
@@ -90,11 +90,11 @@ export default function PartnerPage() {
           </div>
           <div className="grid md:grid-cols-2 gap-6">
             {[
-              { step: "01", title: "浏览课程体系", desc: "查看开源课程框架，了解设计理念" },
-              { step: "02", title: "预约体验课", desc: "1 节免费体验课试讲" },
-              { step: "03", title: "选择合作方案", desc: "根据机构规模和需求选择" },
-              { step: "04", title: "师资培训", desc: "2 天集中培训" },
-              { step: "05", title: "开班授课", desc: "获得全部教学资源，正式开课" },
+              { step: "01", title: "浏览课程体系", desc: "查看 10–15 岁主线课和 AI 学习作品法" },
+              { step: "02", title: "预约体验课", desc: "用 AI 古诗导演试讲验证课堂反馈" },
+              { step: "03", title: "选择合作方案", desc: "按机构阶段选择授权、工作坊或全套合作" },
+              { step: "04", title: "师资培训", desc: "掌握互动课件、提示词流程和课堂节奏" },
+              { step: "05", title: "开班授课", desc: "获得全部教学资源，持续沉淀学生作品" },
             ].map((item) => (
               <div key={item.step} className="tech-panel p-8 text-center">
                 <p className="text-white/20 text-[20px] font-bold mb-2 tabular-nums">{item.step}</p>

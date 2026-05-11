@@ -1,5 +1,35 @@
 import ContactCooperateButton from "./lib/contactCooperateButton";
 
+const courseModules = [
+  {
+    num: "01",
+    title: "AI 学习作品法",
+    desc: "用古诗图、单词卡、知识地图等作品，把 AI 变成孩子自己的学习帮手。",
+  },
+  {
+    num: "02",
+    title: "AI 人工智能通识",
+    desc: "理解 AI 会什么、不会什么，学会提问、验证、判断，而不是盲目相信答案。",
+  },
+  {
+    num: "03",
+    title: "AIGC 内容创作",
+    desc: "从图片、故事、海报到短视频分镜，让孩子完整经历一次创意生产流程。",
+  },
+  {
+    num: "04",
+    title: "综合项目展示",
+    desc: "整理作品集，讲清创作过程、工具选择和改进思路，形成可展示成果。",
+  },
+];
+
+const trialSteps = [
+  { step: "01", title: "听见古诗", desc: "先闭眼听《宿新市徐公店》，说出脑子里出现的画面。" },
+  { step: "02", title: "拆成四问", desc: "谁？在哪里？在做什么？什么感觉？把诗句拆成 AI 听得懂的素材。" },
+  { step: "03", title: "逐句生图", desc: "每一句都完成关键词、提示词、即梦出图、看图反馈的闭环。" },
+  { step: "04", title: "作品复盘", desc: "四幅图连成古诗图卷，再用互动游戏复习诗句和画面。" },
+];
+
 export default function Home() {
   return (
     <main className="min-h-screen grid-bg relative overflow-hidden">
@@ -22,7 +52,7 @@ export default function Home() {
       {/* ── Hero ── */}
       <section className="sect pt-40 pb-32 flex items-center justify-center relative overflow-hidden">
         <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-gradient-to-r from-[#0066FF]/10 to-[#FF6B2C]/6 blur-[160px] pointer-events-none" />
-        <div className="relative z-10 text-center max-w-2xl mx-auto flex flex-col items-center">
+        <div className="relative z-10 text-center max-w-3xl mx-auto flex flex-col items-center">
           <img
             src="/atta-sphere.jpg"
             alt="ATTA"
@@ -32,18 +62,16 @@ export default function Home() {
             <span className="grad">ATTA</span>
           </h1>
           <p className="text-2xl text-white/75 font-medium mb-4 tracking-wide">AI 创客实战营</p>
-          <p className="text-[15px] text-white/30 leading-relaxed max-w-sm mx-auto mb-16">
-            面向 8–15 岁青少年的开源 AI 教育体系<br />
-            三轨九级，从兴趣启蒙到竞赛冲刺
+          <p className="text-[15px] text-white/30 leading-relaxed max-w-xl mx-auto mb-10">
+            面向 10–15 岁青少年的 AI 学习作品课<br />
+            20 课 × 120 分钟，用 AI 做出反过来帮助自己学习的作品
           </p>
-          {/* <div className="flex gap-4 justify-center">
-            <a href="#tracks" className="group relative inline-flex min-w-[172px] items-center justify-center px-10 py-4 rounded-full bg-gradient-to-r from-[#0C74FF] to-[#00C7FF] text-white text-[15px] font-semibold tracking-wide shadow-[0_12px_30px_rgba(0,116,255,0.3)] hover:shadow-[0_16px_42px_rgba(0,116,255,0.42)] hover:-translate-y-0.5 transition-all duration-300">
-              查看课程体系
-            </a>
-            <a href="https://github.com/ryrhappy/atta-ai-curriculum" target="_blank" rel="noopener noreferrer" className="group inline-flex items-center justify-center px-8 py-3 rounded-full border border-white/20 bg-white/[0.03] text-white/80 text-[14px] font-semibold tracking-wide backdrop-blur-sm hover:bg-white/[0.08] hover:border-white/35 hover:text-white transition-all duration-300">
-              开源仓库
-            </a>
-          </div> */}
+          <div className="flex flex-wrap gap-3 justify-center text-[12px] text-white/45">
+            <span className="chip tech-chip">10–15 岁</span>
+            <span className="chip tech-chip">20 课时</span>
+            <span className="chip tech-chip">5980 元</span>
+            <span className="chip tech-chip">机构合作</span>
+          </div>
         </div>
       </section>
 
@@ -51,13 +79,13 @@ export default function Home() {
       <section className="sect tech-section">
         <div className="content-shell">
           <div className="text-center mb-20">
-            <span className="chip tech-chip">Philosophy</span>
+            <span className="chip tech-chip">Method</span>
             <h2 className="tech-heading text-[2.5rem] md:text-[3rem] font-bold mt-6 mb-6">
-              不是学 AI，是<span className="grad">用</span> AI
+              AI 学习作品法
             </h2>
             <p className="tech-lead text-[15px] md:text-[16px]">
-              ATTA(阿塔AI) 的每一节课都以作品产出为目标。<br />
-              孩子带走的不止知识，是可运行的项目、可展示的作品、可参赛的成果。
+              不是让 AI 替孩子写作业，而是让孩子用 AI 做出一件能帮助自己学习的作品。<br />
+              每节课都要看得见、讲得清、带得走。
             </p>
           </div>
 
@@ -65,23 +93,23 @@ export default function Home() {
             {[
               {
                 num: "01",
-                title: "作品驱动",
-                desc: "每节课结束，孩子拥有一个可视、可分享、可运行的作品。不是学完忘完，是做出来、带回家。"
+                title: "轻学科化",
+                desc: "结合古诗、英语、知识整理等真实学习场景，但重点教 AI 工具流程，不替代学科老师。"
               },
               {
                 num: "02",
-                title: "伦理内建",
-                desc: "AI 伦理不是最后一节课的附录。每节课都有讨论环节，竞赛轨道更有专门的伦理审查报告——评委眼中的差异化加分项。"
+                title: "作品驱动",
+                desc: "一节课一个作品：古诗图、知识卡、故事海报、项目展示页。孩子和家长都能看见结果。"
               },
               {
                 num: "03",
-                title: "真实开发流程",
-                desc: "授课老师是独立开发者，教的是真实的产品思维和开发流程。不是教材案例，是真实世界的工作方式。"
+                title: "真实工作流",
+                desc: "从提问、拆解、生成、修改到展示，训练的是未来真实使用 AI 的完整流程。"
               },
               {
                 num: "04",
-                title: "竞赛直通",
-                desc: "每节课标注赛事能力项，进阶和竞赛轨道有专属冲刺模块。直通 NOC、蓝桥杯、宋庆龄少年儿童发明奖。"
+                title: "安全与判断",
+                desc: "每节课都加入 AI 边界、信息验证和原创标注，让孩子知道什么时候该自己思考。"
               },
             ].map((item) => (
               <div key={item.num} className="tech-panel p-8 md:p-9 flex flex-col items-center text-center gap-4">
@@ -96,68 +124,76 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Three Tracks ── */}
+      {/* ── Main Course ── */}
       <section id="tracks" className="sect tech-section">
         <div className="content-shell">
           <div className="text-center mb-20">
             <span className="chip tech-chip">Curriculum</span>
-            <h2 className="tech-heading text-[2.5rem] md:text-[3rem] font-bold mt-6 mb-4">三轨课程体系</h2>
+            <h2 className="tech-heading text-[2.5rem] md:text-[3rem] font-bold mt-6 mb-4">10–15 岁单轨主线课</h2>
             <p className="tech-lead text-[15px] md:text-[16px]">
-              每个年龄，都有最适合的学习路径
+              为第一家机构试讲和后续合作售卖设计：一套课，覆盖 AI 通识、学习辅助、AIGC 创作与项目展示。
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            {/* Starter */}
-            <div className="tech-panel p-10 flex flex-col text-center">
-              <span className="chip text-emerald-400/60 border-emerald-400/20 mb-6 mx-auto">启蒙轨道</span>
-              <h3 className="text-2xl font-bold mb-1">AI 小探索家</h3>
-              <p className="text-white/25 text-[13px] mb-8">3–4 年级 · 8–10 岁</p>
-              <div className="space-y-3 text-[14px] text-white/45 mb-auto">
-                <div className="flex flex-col items-center gap-1 py-1"><span>课时</span><span className="text-white/70">12 课 × 60min</span></div>
-                <div className="h-px bg-white/[0.06]" />
-                <div className="flex flex-col items-center gap-1 py-1"><span>产出</span><span className="text-white/70">每课一个可视作品</span></div>
-                <div className="h-px bg-white/[0.06]" />
-                <div className="flex flex-col items-center gap-1 py-1"><span>方式</span><span className="text-white/70">玩中学，分享驱动</span></div>
-                <div className="h-px bg-white/[0.06]" />
-                <div className="flex flex-col items-center gap-1 py-1"><span>目标</span><span className="text-white/70">激发兴趣，建立自信</span></div>
-              </div>
-            </div>
-
-            {/* Builder — featured */}
-            <div className="tech-panel tech-panel-highlight p-10 flex flex-col border-blue-400/20 text-center">
-              <span className="chip text-blue-200 border-blue-300/50 bg-blue-400/15 mb-6 mx-auto">进阶轨道</span>
-              <h3 className="text-2xl font-bold mb-1">AI 开发者</h3>
-              <p className="text-white/25 text-[13px] mb-8">5–6 年级 · 10–12 岁</p>
-              <div className="space-y-3 text-[14px] text-white/45 mb-auto">
-                <div className="flex flex-col items-center gap-1 py-1"><span>课时</span><span className="text-white/70">18 课 × 90min</span></div>
-                <div className="h-px bg-white/[0.06]" />
-                <div className="flex flex-col items-center gap-1 py-1"><span>产出</span><span className="text-white/70">3 个真实项目</span></div>
-                <div className="h-px bg-white/[0.06]" />
-                <div className="flex flex-col items-center gap-1 py-1"><span>方式</span><span className="text-white/70">项目制 + 竞赛冲刺</span></div>
-                <div className="h-px bg-white/[0.06]" />
-                <div className="flex flex-col items-center gap-1 py-1"><span>目标</span><span className="text-white/70">NOC / 蓝桥杯参赛</span></div>
-              </div>
-            </div>
-
-            {/* Champion */}
-            <div className="tech-panel p-10 flex flex-col text-center">
-              <span className="chip text-orange-400/60 border-orange-400/20 mb-6 mx-auto">竞赛轨道</span>
-              <h3 className="text-2xl font-bold mb-1">AI 竞赛选手</h3>
-              <p className="text-white/25 text-[13px] mb-8">7–9 年级 · 12–15 岁</p>
-              <div className="space-y-3 text-[14px] text-white/45 mb-auto">
-                <div className="flex flex-col items-center gap-1 py-1"><span>课时</span><span className="text-white/70">12 课 × 120min</span></div>
-                <div className="h-px bg-white/[0.06]" />
-                <div className="flex flex-col items-center gap-1 py-1"><span>产出</span><span className="text-white/70">1–2 个竞赛作品</span></div>
-                <div className="h-px bg-white/[0.06]" />
-                <div className="flex flex-col items-center gap-1 py-1"><span>方式</span><span className="text-white/70">全程指导参赛</span></div>
-                <div className="h-px bg-white/[0.06]" />
-                <div className="flex flex-col items-center gap-1 py-1"><span>目标</span><span className="text-white/70">伦理审查差异化加分</span></div>
-              </div>
+          <div className="tech-panel tech-panel-highlight p-8 md:p-10 mb-8">
+            <div className="grid md:grid-cols-4 gap-6 text-center">
+              {[
+                { label: "年龄", value: "10–15 岁" },
+                { label: "课时", value: "20 课 × 120min" },
+                { label: "定价", value: "5980 元" },
+                { label: "模式", value: "机构合作 / 课程授权" },
+              ].map((item) => (
+                <div key={item.label} className="tech-panel p-6">
+                  <p className="text-white/25 text-[12px] mb-2">{item.label}</p>
+                  <p className="tech-title text-[18px] font-semibold">{item.value}</p>
+                </div>
+              ))}
             </div>
           </div>
 
-          <p className="text-center text-white/30 text-[13px] mt-8">详细定价请参阅<a href="/partner" className="underline underline-offset-4 hover:text-white/60 transition-colors">机构合作</a></p>
+          <div className="grid md:grid-cols-2 gap-6">
+            {courseModules.map((item) => (
+              <div key={item.num} className="tech-panel p-8 md:p-9 text-center">
+                <p className="text-white/20 text-[24px] font-bold mb-3 tabular-nums">{item.num}</p>
+                <h3 className="tech-title font-semibold text-[18px] mb-3">{item.title}</h3>
+                <p className="tech-desc text-[15px]">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <p className="text-center text-white/30 text-[13px] mt-8">合作方案请参阅 <a href="/partner" className="underline underline-offset-4 hover:text-white/60 transition-colors">机构合作</a></p>
+        </div>
+      </section>
+
+      {/* ── Trial Class ── */}
+      <section className="sect tech-section">
+        <div className="content-shell">
+          <div className="text-center mb-20">
+            <span className="chip tech-chip">Trial Class</span>
+            <h2 className="tech-heading text-[2.5rem] md:text-[3rem] font-bold mt-6 mb-4">
+              AI 古诗导演体验课
+            </h2>
+            <p className="tech-lead text-[15px] md:text-[16px]">
+              以《宿新市徐公店》为例，把一整首古诗变成四幅画。<br />
+              课堂重点不是背 Prompt，而是让孩子把诗句拆成画面，再用即梦 AI 逐句生成。
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-4 gap-6 mb-8">
+            {trialSteps.map((item) => (
+              <div key={item.step} className="tech-panel p-7 text-center">
+                <p className="text-white/20 text-[22px] font-bold mb-3 tabular-nums">{item.step}</p>
+                <h3 className="tech-title font-semibold text-[16px] mb-3">{item.title}</h3>
+                <p className="tech-desc text-[14px]">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="tech-panel p-8 md:p-9 text-center">
+            <p className="tech-copy text-[15px]">
+              体验课产出：每个孩子完成 1 组古诗分镜图，理解“AI 是学习帮手，不是作业替身”。视频生成作为课后延展，避免现场排队影响课堂节奏。
+            </p>
+          </div>
         </div>
       </section>
 
@@ -167,10 +203,10 @@ export default function Home() {
           <div className="text-center mb-20">
             <span className="chip tech-chip">How It Works</span>
             <h2 className="tech-heading text-[2.5rem] md:text-[3rem] font-bold mt-6 mb-4">
-              ATTA(阿塔AI) 如何运转
+              ATTA(阿塔AI) 如何支持机构落地
             </h2>
             <p className="tech-lead text-[15px] md:text-[16px]">
-              AI 贯穿教学全流程，让一个老师也能高质量带班
+              不自营招生和场地，专注课程内容、试讲资产、讲师工作流和可复制交付。
             </p>
           </div>
 
@@ -178,15 +214,15 @@ export default function Home() {
             {[
               {
                 phase: "课前",
-                desc: "ATTA(阿塔AI) 自动生成教案、PPT、任务单。老师 10 分钟备好一节课。"
+                desc: "提供互动 HTML 课件、讲师逐字稿、提示词清单、任务单和课堂流程表。"
               },
               {
                 phase: "课中",
-                desc: "实时答疑、Prompt 辅导、作品点评。1 个老师也能带好 20 人班。"
+                desc: "按步骤完成拆解、生成、反馈和作品展示，降低普通老师上 AI 课的门槛。"
               },
               {
                 phase: "课后",
-                desc: "生成学习报告、推荐练习、追踪进度。家长看得见的成长。"
+                desc: "整理学生作品、生成家长反馈素材，并沉淀成下一次招生和合作案例。"
               },
             ].map((item, idx) => (
               <div key={item.phase} className={`tech-panel p-8 md:p-9 text-center ${idx === 2 ? "md:col-span-2" : ""}`}>
@@ -203,18 +239,18 @@ export default function Home() {
         <div className="content-shell text-center">
           <span className="chip tech-chip">Open Source</span>
           <h2 className="tech-heading text-[2.5rem] md:text-[3rem] font-bold mt-6 mb-4">
-            开源，是最大的护城河
+            开源课程框架，可被机构二次落地
           </h2>
           <p className="tech-lead text-[15px] md:text-[16px] mb-20">
-            ATTA(阿塔AI) 不办学，让所有人都能办学。<br />
-            课程框架、教案引擎、数据接口，全部开源。
+            ATTA(阿塔AI) 的课程结构、教案数据和部分示例资产开放在 GitHub。<br />
+            商业上课与机构授权可在此基础上定制。
           </p>
 
           <div className="grid md:grid-cols-2 gap-6 md:gap-8 mb-12">
             {[
-              { title: "课程框架", desc: "标准化的课程接口，任何人都可扩展新轨道" },
-              { title: "教案引擎", desc: "输入课程大纲，自动生成教案、PPT、任务单" },
-              { title: "数据接口", desc: "AI 教育工具的通用数据格式和 API 标准" },
+              { title: "课程框架", desc: "统一的课程数据结构，方便持续扩展 20 课主线和体验课资产" },
+              { title: "教师工作台", desc: "按步骤查看目标、产出、伦理提醒、物料和课堂流程" },
+              { title: "机构合作", desc: "围绕试讲、课程授权、师资培训和后续交付形成标准合作包" },
             ].map((item, idx) => (
               <div key={item.title} className={`tech-panel p-8 md:p-9 text-center ${idx === 2 ? "md:col-span-2" : ""}`}>
                 <h3 className="tech-title font-semibold text-[18px] mb-4">{item.title}</h3>
@@ -241,10 +277,10 @@ export default function Home() {
           <div className="text-center mb-20">
             <span className="chip tech-chip">Cooperation</span>
             <h2 className="tech-heading text-3xl md:text-4xl font-bold mt-6 mb-4">
-              让每个孩子<br />都能用 <span className="grad">AI</span> 创造
+              让孩子用 <span className="grad">AI</span><br />做出自己的学习作品
             </h2>
             <p className="tech-lead text-[15px] md:text-[16px]">
-              家长、老师、机构 — 都有适合的合作方式
+              适合培训机构、学校、少年宫先用体验课验证，再导入 20 课主线课程。
             </p>
           </div>
           <div className="tech-panel p-10 md:p-12">
@@ -263,6 +299,7 @@ export default function Home() {
         <div className="content-shell flex flex-col md:flex-row justify-center items-center gap-3 md:gap-8 text-[12px] text-white/20 text-center">
           <span>ATTA  © 2026</span>
           <span>基于教育部 2025 指南设计</span>
+          <a href="https://atta-website.pages.dev" className="hover:text-white/45 transition-colors">atta-website.pages.dev</a>
         </div>
       </footer>
     </main>
